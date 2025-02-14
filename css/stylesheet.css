@@ -28,7 +28,7 @@ p, a, span{
 .color-purple{
     color: rgb(154, 61, 247);
 }
-.story, .edu, .skills, .exp, .projects, .certi{
+.story, .edu, .skills, .exp, .projects, .certi, .project-section{
     padding: 100px 0;
 }
 .story h2, .edu h2, .skills h2, .exp h2, .projects h2, .certi h2{
@@ -277,7 +277,7 @@ top: 0; transition: all 0.4s ease-in-out; z-index: 9;
     .banner-inner figure img {
         width: 300px;
     }
-    .story, .edu, .skills, .exp, .projects, .certi{
+    .story, .edu, .skills, .exp, .projects, .certi, .project-section{
         padding: 70px 0;
     }
     .certi{
@@ -333,7 +333,7 @@ top: 0; transition: all 0.4s ease-in-out; z-index: 9;
     .sticky.header {
         top: -70px;
     }
-    .story, .edu, .skills, .exp, .projects, .certi{
+    .story, .edu, .skills, .exp, .projects, .certi, .project-section{
         padding: 60px 0;
     }
     .certi{
@@ -407,7 +407,7 @@ top: 0; transition: all 0.4s ease-in-out; z-index: 9;
     .sticky .gg_index-links{
         margin-bottom: 15px;
     }
-    .story, .edu, .skills, .exp, .projects, .certi{
+    .story, .edu, .skills, .exp, .projects, .certi, .project-section{
         padding: 120px 0 0 0;
     }
     .certi{
