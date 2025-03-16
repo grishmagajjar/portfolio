@@ -30,3 +30,15 @@ jQuery(function () {
     });
 });
 
+jQuery("#video-popup").click(function(){
+    jQuery("body").toggleClass("video-popup");
+});    
+jQuery("#close").click(function(){
+    jQuery("body").toggleClass("video-popup");
+
+        // Stop video by resetting the iframe src
+        var iframe = jQuery("#video-content iframe");
+        var videoSrc = iframe.attr("src"); // Store original src
+        iframe.attr("src", ""); // Remove src to stop video
+        iframe.attr("src", videoSrc); // Restore src when reopened
+});   
