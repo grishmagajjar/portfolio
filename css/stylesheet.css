@@ -13,8 +13,57 @@ div{
 h1, h2, h3, h4, h5, h6, .font-h1 h1 a{
     font-family: "Abril Fatface", serif; font-weight: 300; margin: 0 0; 
 }
-p, a, span{
-    font-family: "Quicksand", serif; font-size: 18px; line-height: 30px;
+p, a, span, li{
+    font-family: "Quicksand", serif; 
+    /* font-size: 18px; line-height: 30px; */
+}
+h4 span, h5 span, h6 span{
+    font-family: "Abril Fatface", serif
+}
+p{
+    margin-top: 0px; margin-bottom: 10px; 
+}
+p:last-child{
+    margin-bottom: 30px;
+}
+li {
+    text-align: left; list-style: none;
+}
+ul{
+    padding-left: 10px; margin-top: 0;
+}
+code {
+    padding: 30px 20px; display: block; font-size: 18px; margin: 5px 0 40px 0;border: 1px solid #ccc; text-align: center; line-height: 28px;
+}
+code.text-left{
+    text-align: left;
+}
+.red-text{
+    color: #ff0000; font-size: 18px; line-height: 28px;
+}
+.context-font h5, .context-font h6{
+    background-color: #fff !important; color: #000 !important; font-weight: 400; font-size: 18px !important; padding: 0 0 05px 0 !important;  border-bottom: 1px solid #ccc
+}
+.context-font{
+    padding: 20px; border: 1px solid #ccc; margin-bottom: 40px;
+}
+.context-font p, .context-font li,.context-font  a, .context-font span {
+    font-size: 14px !important;
+}
+.context-font ul{
+    padding-left: 20px !important;
+}
+.context-font ul li{
+    list-style: disc 
+}
+.context-font p{
+    margin-bottom: 05px !important;
+}
+.bottom-line{
+    width: 100%; border-bottom: 1px solid #ccc; padding-bottom: 10px;
+}
+.font-h5 h5{
+    font-size: 25px; line-height: 33px; margin-top: 10px;
 }
 .font-h4 h4{
     font-size: 28px; line-height: 36px
@@ -32,7 +81,7 @@ p, a, span{
     padding: 100px 0;
 }
 .story h2, .edu h2, .skills h2, .exp h2, .projects h2, .certi h2, .project-section h2{
-    text-align: center; padding-bottom: 15px; 
+    text-align: center; padding-bottom: 15px;  margin-bottom: 20px;
 }
 .center-line{
     position: relative;
@@ -69,10 +118,10 @@ top: 0; transition: all 0.4s ease-in-out; z-index: 9;
     border-bottom: 1px solid #000;
 }
 .header.sticky .gg_index-links{
-    padding: 10px 0;
+    padding: 25px 0;
 }
 .gg_index-links {
-    display: flex; list-style: none; padding: 40px 0; justify-content: space-between; transition: all 0.4s ease-in-out;
+    display: flex; list-style: none; padding: 40px 0; justify-content: space-between; transition: all 0.4s ease-in-out; margin-bottom: 0;
 }
 .gg_index-links li{
     margin: 0 5px
@@ -210,7 +259,7 @@ max-height: 40px;
     font-size: 25px; line-height: 35px;
 }
 .subtitle1{
-    color: rgba(0, 0, 0, 0.6); font-size: 16px; margin-bottom: 20px
+    color: rgba(0, 0, 0, 0.6); font-size: 16px; margin-bottom: 20px; line-height: 24px;
 }
 .year-style{
     font-weight: 600; color: rgba(0, 0, 0, 0.6);
@@ -292,7 +341,7 @@ max-height: 40px;
     text-align: center; 
 }
 .project-section iframe{
-    margin-top: 70px; box-shadow: 1px 2px 15px #ccc;
+    box-shadow: 1px 2px 15px #ccc;
     border-radius: 40px
 }
 
@@ -338,6 +387,69 @@ max-height: 40px;
 }
 
 
+/* project page accordion css  */
+.accordion-item{
+    border-bottom: 1px solid #ccc;
+}
+.accordion-content { 
+    display: none; padding: 20px 20px 40px 20px; text-align: left;
+}
+.accordion-content ul{
+    padding-left: 0;
+}
+.accordion-content ul li{
+    margin-bottom: 5px;
+}
+.accordion-content img{
+    max-width: 100%; margin-bottom: 20px; display: inline-block;
+}
+.accordion-header { 
+    cursor: pointer; padding: 35px 15px; background-color: #fff; display: flex; justify-content: space-between; align-items: center;
+    font-weight: bold;
+}
+.accordion-header.active {
+    background-color: #fff; 
+}
+.accordion-icon { 
+    margin-left: auto; font-weight: 100; font-size: 30px;
+}
+.accordion-content h5 {
+    font-size: 23px;
+    line-height: 33px;
+    padding-top: 10px;
+    font-family: "Quicksand", serif;
+    font-weight: 700;
+    color: #9a3df7;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+}
+.accordion-content h6 {
+    font-size: 20px;
+    line-height: 33px;
+    font-family: "Quicksand", serif;
+    font-weight: 700;
+}
+.nested-ul-styles ul{
+    padding-left: 15px
+}
+.nested-ul-styles ul li{
+    list-style:  none; 
+}
+.nested-ul-styles ol > li{
+    list-style: unset;
+}
+.accordion p, .accordion li{
+    font-size: 18px; line-height: 30px;
+}
+.accordion p{
+    margin-bottom: 15px;
+}
+.accordion p:last-child{
+    margin-bottom: 25px;
+}
+/* project page accordion css  */ 
+
 
 @media screen and (max-width:1199px){
     .banner-inner figure {
@@ -360,7 +472,7 @@ max-height: 40px;
         max-height: 270px;
     }
     .project-section iframe{
-        margin-top: 40px; width: 950px !important;
+        width: 950px !important;
     }
     .certi .top {
         height: 180px;
@@ -436,7 +548,7 @@ max-height: 40px;
         max-height: 200px;
     }
     .project-section iframe{
-        margin-top: 40px; width: 700px !important; height: 550px !important;
+        width: 700px !important; height: 550px !important;
     }
     .font-h2 h2 {
         font-size: 35px;
@@ -523,7 +635,7 @@ max-height: 40px;
         max-height: 240px;
     }
     .project-section iframe{
-        margin-top: 40px; width: 500px !important;height: 350px !important;
+         width: 500px !important;height: 350px !important;
     }
     .grid-mn-3 .edu-grid {
         width: 90%;
@@ -551,7 +663,7 @@ max-height: 40px;
 }
 @media screen and (max-width:567px){
     .project-section iframe{
-        margin-top: 40px; width: 300px !important;
+         width: 300px !important;
     }
     .gg_index-links li a {
         font-size: 15px; 
