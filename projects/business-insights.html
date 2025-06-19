@@ -37,12 +37,772 @@
             </div>
         </div>
     </header>
+
     <section class="project-section font-h2">
         <div class="container">
             <h2 class="center-line">Business Insights 360</h2>
-            <p>Developed an interactive Power BI dashboard integrating MySQL & Excel to provide 360-degree business insights. Designed 4 key analytical views covering P&L analysis, revenue trends, gross margin, and financial KPIs. Implemented ETL processes for data transformation and built 10+ KPIs to track profitability, sales performance, and business health.
+            <p class="font-22">Developed an interactive Power BI dashboard integrating MySQL & Excel to provide 360-degree business insights. Designed 4 key analytical views covering P&L analysis, revenue trends, gross margin, and financial KPIs. Implemented ETL processes for data transformation and built 10+ KPIs to track profitability, sales performance, and business health.
             </p>
-            <iframe title="BI_updated_march" width="1200" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiZmViMWRhYzMtYjlmMy00OTUzLThmZWUtZTAyZGMzOTQ4ZDcyIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" frameborder="0" allowFullScreen="true"></iframe>    
+
+
+            <!-- -----------------------------  ACCORDION  -----------------------------  -->
+            <div class="accordion">
+                <div class="accordion-item" id="project-info">
+                    <div class="accordion-header font-h4">
+                        <h4>Project Info</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content font-h5">
+                        <ul>
+                            <li><b>Company Name: </b> (imaginery) AtliQ Hardware</li>
+                            <li><b>Domain: </b> Electronic Goods</li>
+                            <li><b>Business Model: </b> B2B</li>
+                            <li><b>Duration: </b> 40 hours</li>
+                        </ul>
+                        <div>
+                            <h5>Problem Statement</h5>
+                            <p>AtliQ Hardware is one of the fastest-growing companies, selling products such as PCs, keyboards, and other hardware components globally.</p>
+                            <p>  However, when <b>the company attempted to expand its business into the Latin American market, it suffered significant losses.</b></p> 
+                            <p> Upon investigation, it was discovered that the decision was made based on intuition and survey responses rather than relying on historical 
+                                data and concrete numbers.</p>
+                        </div>
+                        <div>
+                            <h5>Business Goal/ Motive of the project</h5>
+                            <p>AtliQ Hardware now aims to <b>develop a comprehensive dashboard that consolidates data from finance, sales, marketing, and supply chain 
+                                operations.</b> The objective is to enable data-driven decision-making to avoid similar setbacks in the future.
+                            </p>
+                        </div>
+                        <div class="nested-ul-styles">
+                            <h5>Business Needs for Dashboard Development</h5>
+                            <p>They require 5 consecutive dashboards:</p>
+                            <ol type="1">
+                                <li><b>Finance view</b>
+                                    <ul>
+                                        <li>P&L Statement for: Markets, Products & Customers</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Sales View:</b>
+                                    <ul>
+                                        <li>top/bottom customers</li>
+                                        <li>Key metrics - understand their performance</li>
+                                    </ul>
+                                </li>
+                                <li><b>Marketing View:</b>
+                                   <ul>
+                                        <li>top/bottom customers</li>
+                                        <li>Key metrics - understand their performance</li>
+                                    </ul>                                    
+                                </li>
+                                <li>
+                                    <b>Supply Chain:</b>
+                                    <ul>
+                                        <li>Reliability</li>
+                                        <li>Forecast Accuracy</li>
+                                    </ul>
+                                </li>
+                                 <li>
+                                    <b>Executive View:</b>
+                                    <ul>
+                                        <li>Integrated view of Key Insights</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h5>Steps to follow when creating a dashboard</h5>
+                            <ul>
+                                <li>Connect to Data</li>
+                                <li>Transform Data (Power Query)</li>
+                                <li>Data Modeling</li>
+                                <li>Add DAX Calculations</li>
+                                <li>Validate & Optimize</li>
+                                <li>Build Visuals (View by View)</li>
+                                <li>Design & Polish</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" id="data-tables">
+                    <div class="accordion-header font-h4">
+                        <h4>Data Tables Overview</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Below images includes all the table names along with their column names. This is all the data I had when I started the project.</p>
+                        <p>There are 2 databases: </p>
+                        <p><b>gdb041:</b> for Sales and Forecasting (Business Performance)</p>
+                        <p><b>gdb056:</b> for Cost and Pricing (Profitability Analytics)</p>
+
+
+                        <p><b>Database: gdb041</b></p>
+                        <img src="../images/gdb041.png"/>
+                        <p><b>Database: gdb056</b></p>
+                        <img src="../images/gdb056.png"/>
+                    </div>
+                </div>
+                <div class="accordion-item" id="data-tables">
+                    <div class="accordion-header font-h4">
+                        <h4>Bored? | Watch my video presentation</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <iframe width="1236" height="695" src="https://www.youtube.com/embed/XGucP3QN9rw" title="Business Insights 360" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="accordion-item" id="date-table">
+                    <div class="accordion-header font-h4">
+                        <h4> <span class="color-purple">Data Transformation</span> | Date Table and Financial Metrics </h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <!-- Create a Date table with Fiscal Year -->
+                        <h5>Create a Date table with Fiscal Year</h5>
+                        <p><b>Start date(fact_sales table):</b> Sep 2017</p>
+                        <p><b>End date(fact_forecast table):</b> Dec 2022</p>
+                        <p><b>Fiscal Year Cycle:</b> Sep to Aug</p>
+                        <h6>Date Table</h6>
+                        <code>
+                            = {Number.From(#date(2017,9,1))..Number.From(#date(2022,12,31))}
+                        </code>
+                        <h6>Fiscal Year Column</h6>
+                        <p>i.e. Fiscal year 2018 = Sep(9) 2017 to Aug(8) 2018</p>
+                        <code>
+                            = {Number.From(#date(2017,9,1))..Number.From(#date(2022,12,31))}
+                        </code>
+                        <!-- Create a Date table with Fiscal Year -->
+
+                        <!-- Table with YTD and YTG data: COMBINED -->
+                         <h5>Table with YTD and YTG data: COMBINED</h5>
+                         <p>For future analysis I will require a table with actual AND forecast data.</p>
+                        <p> I will combine fact_sales table with fact_forecast table. We can see that both the tables have same column names so It will be easy append the tables.</p>
+                        <p> We have to grab all the <b>past months data from fact_sales table</b>, and then <b>for coming months we will require data from fact_forecast table</b>. Review below screenshot for more clarification.</p>
+                        <img src="../images/actual-forecast.png"/>
+                        <p>Reference table of fact_sales: fact_actuals_forecast</p>
+
+                        <p>Reference Table of fact_forecast: remaining_months.</p>
+                        <p>we don't need whole forecast table, we need data from last sale date.</p>
+                        <code>
+                            LastSaleMonth = List.Month(#"gdb041 fact_sale_monthly"[date])
+                        </code>
+                        <code>
+                           remaining_months = Table.SelectRows(source, each([date] > LastSaleMonth))
+                        </code>
+                        <p>Append tables: fact_actuals_forecast | remaining_months</p>
+                        <!-- Table with YTD and YTG data: COMBINED -->
+
+                        <!-- P&L and Financial Metrics Setup -->
+                        <h5>P&L and Financial Metrics Setup</h5>
+                        <p>Below Screenshot includes all the calculation for P&L Statement:</p>
+                        <img src="../images/pnl-calculation.png"/>
+
+                        <p>Merged tables in Power Query using primary, foreign, or composite keys based on the relationship between datasets. For example:</p>
+                        <h6>Gross Price</h6>
+                        <code>
+                            gross_sale_amount = [gross_price]*[Qty]
+                        </code>
+
+                        <p class="red-text">*Due to the high volume of data in post-invoice deductions (millions of rows), DAX was used to efficiently after that, to aggregate and compute key financial metrics.</p>
+                        
+                        <div class="context-font">
+                            <h5>Key Learnings</h5>
+                            <p>Creating a Date Table is a very important step, especially in professional reporting and Power BI dashboards. <br>
+                            <i>Even Microsoft recommends this in official Power BI documentation.</i></p>
+                            <p>Why creating a date table:</p>
+                            <ul>
+                                <li>Full use of time intelligence (YTD, QTD, MTD, etc.)</li>
+                                <li>All dates shown (even with no data)</li>
+                                <li>Easy to add fiscal year/month/week</li>
+                                <li>Smooth filters like "Last 30 Days", "Current Quarter"</li>
+                                <li>Clean, reusable logic and measures</li>
+                            </ul>
+
+                            <p><b>YTD:</b> Year-to-Date (fact_sale table) </p>
+                            <p><b>YTG:</b> Year-to-Go (remaining_months table)</p>
+
+                            <p>A <b>composite key</b> is a combination of two or more columns that together uniquely identify a row in a table (especially during joins 
+                                or merges).</p>
+                        </div>
+                        <!-- P&L and Financial Metrics Setup -->
+
+
+                    </div>
+                </div>
+                
+                <div class="accordion-item" id="data-modeling">
+                    <div class="accordion-header font-h4">
+                        <h4 ><span class="color-purple">Data Modeling</span> | P&L and Financial Metrics Setup</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Before performing DAX calculations, it's essential to define relationships between tables — this process is known as <strong>data modeling</strong>.</p>
+                        <p>Below Screenshot is consist of data model view:</p>
+                        <img src="../images/data-model1.png"/>
+                        <p>The data model follows a Snowflake Schema, with multiple fact tables and normalized dimension tables connected through composite and direct
+                             relationships.</p>
+                        
+                        <div class="context-font">
+                            <h5>Key Learnings</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" id="dax-column">
+                    <div class="accordion-header font-h4">
+                        <h4 ><span class="color-purple">Data Transformation</span> | P&L and Financial Metrics Setup</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>We will continue with post_invoice deduction, but with DAX columns.</p>
+                        <h5>Post invoice deduction amount</h5>
+                        <code class="text-left">
+<pre>
+post_invoice_deduction_amount = 
+    var res = 
+        CALCULATE(
+            MAX(post_invoice_deductions[discounts_pct]), RELATEDTABLE(post_invoice_deductions)
+        )
+    return res*fact_sales_actuals_estimates[net_invoice_sale_amt]
+</pre>
+                        </code>
+                        
+                        <h5>Post invoice other deduction amount</h5>
+                        <code class="text-left">
+<pre>
+post_invoice_other_deduction_amount = 
+    var res = 
+        CALCULATE(
+            MAX(post_invoice_deductions[other_deductions_pct]), RELATEDTABLE(post_invoice_deductions)
+        )
+    return res*fact_sales_actuals_estimates[net_invoice_sale_amt]
+</pre>
+                        </code>
+
+                        <h5>Net Sale amount</h5>
+                        <p>Net Sale amount = NIS - all post invoice</p>
+                        <code class="text-left">
+<pre>
+net_sale_amt = 
+    fact_sales_actuals_estimates[net_invoice_sale_amt]
+    -fact_sales_actuals_estimates[post_invoice_deduction_amount]
+    -fact_sales_actuals_estimates[post_invoice_other_deduction_amount]
+</pre>
+                        </code>
+
+                        <h5>Manufacturing Cost</h5>
+                        <p>Manufacturing Cost = Manufacturing Cost * Quantity</p>
+                        <code class="text-left">
+<pre>
+manufacturing_cost = 
+    var res = 
+        CALCULATE(
+            MAX(manufacturing_cost[manufacturing_cost]), RELATEDTABLE(manufacturing_cost)
+        )
+    return res*fact_sales_actuals_estimates[Qty]
+</pre>
+                        </code>
+
+                         <h5>Freight Cost, Other Cost</h5>
+                        <p>Freight Cost = Freight Cost * net Sale amount</p>
+                        <code class="text-left">
+<pre>
+freight_cost = 
+    var res = 
+        CALCULATE(
+            MAX(freight_cost[freight_pct]), RELATEDTABLE(freight_cost)
+        )
+    return res*fact_sales_actuals_estimates[net_sale_amt]
+</pre>
+                        </code>
+                        <code class="text-left">
+<pre>
+other_cost = 
+    var res = 
+        CALCULATE(
+            MAX(freight_cost[other_cost_pct]), RELATEDTABLE(freight_cost)
+        )
+    return res*fact_sales_actuals_estimates[net_sale_amt]
+</pre>
+                        </code>                        
+                        
+                        <h5>Total COGS</h5>
+                        <p>COGS = Manufacturing Cost + Freight Cost + Other Cost</p>
+                        <code class="text-left">
+<pre>
+total_cogs_amount = 
+    fact_sales_actuals_estimates[manufacturing_cost]
+    +fact_sales_actuals_estimates[freight_cost]
+    +fact_sales_actuals_estimates[other_cost]
+</pre>
+                        </code>
+
+                        <h5>Total COGS</h5>
+                        <p>COGS = Manufacturing Cost + Freight Cost + Other Cost</p>
+                        <code class="text-left">
+<pre>
+total_cogs_amount = 
+    fact_sales_actuals_estimates[manufacturing_cost]
+    +fact_sales_actuals_estimates[freight_cost]
+    +fact_sales_actuals_estimates[other_cost]
+</pre>
+                        </code>
+                
+
+                        <div class="context-font">
+                            <h5>Key Learnings</h5>
+                            <p><b>Filter Context</b> are what filters are currently active on your data when a DAX formula is being calculated.</p>
+                            <p>Used <b>CALCULATE</b> function to change filter context.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" id="data-prep">
+                    <div class="accordion-header font-h4">
+                        <h4><span class="color-purple"> Data Preparation</span> | Validation and Optimization</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content nested-ul-styles">
+                        <h5> Data Validation (with Stakeholder Check) </h5>
+                        <p>To ensure data accuracy, I performed a manual validation step:</p>
+                        <ul>
+                            <li>- Connected with the stakeholder to gather key reference metrics (e.g., total revenue).</li>
+                            <li>- Cross-verified those numbers against the loaded dataset.</li>
+                            <li>- Created basic summary visuals (cards/charts) to confirm consistency before proceeding.</li>
+                        </ul>
+                        <h5> File Optimization (using DAX Studio) </h5>
+                        <p>To enhance model performance and reduce size, I conducted targeted file optimization:</p>
+                        <ul>
+                            <li>- Used DAX Studio to analyze table size and memory usage.</li>
+                            <li>- Removed derived columns that can be recalculated via database queries:
+                                <ul>
+                                    <li>- gross_price</li>
+                                    <li>- pre_invoice_pct</li>
+                                    <li>- pre_invoice_amt</li>
+                                </ul>
+                            </li>
+                            <li>- Eliminated calculated fields that replicate basic Excel logic and can be handled by Power BI visuals:
+                                <ul>
+                                    <li>- total_cogs_amt</li>
+                                    <li>- gross_margin</li>
+                                </ul>
+                            </li>
+                        </ul>                  
+
+                        <p><strong>Result:</strong> Reduced the Power BI file size by ~70 MB, improving load time and responsiveness.</p>
+                    </div>
+                </div>
+                <div class="accordion-item" id="pnl-structure">
+                    <div class="accordion-header font-h4">
+                        <h4>1. Finance View | Custom P&L Statement Setup</h4>
+                        <span class="accordion-icon">+</span>
+                        </div>
+
+                        <div class="accordion-content">
+                        <p>
+                            Built a flexible and finance-friendly Profit & Loss (P&L) statement in Power BI by defining a static structure and 
+                            linking it with dynamic measures.
+                        </p>
+
+                        <h5>Steps Involved</h5>
+                        <ul>
+                            <li><strong>Designed Static Structure in Excel:</strong> Created a table with ordered P&L line items
+                                (e.g., Gross Sales, COGS, Net Profit), imported into Power BI as a disconnected table P & L Row.
+                                </li>
+                            <li><strong>Configured Column Layout:</strong> Added a second disconnected table P & L Column to define dynamic columns 
+                                like Benchmark, selected year from filters etc.</li>
+                            <li><strong>Created DAX Measure:</strong> Used SWITCH(TRUE()) logic in a measure called
+                                P & L Values to return appropriate values for each line item.</li>
+                        </ul>
+
+                        <h5> Measure Logic</h5>
+                        <p>P & L Row Structure</p>
+                        <img src="../images/pnl-row.png" height="300px">
+
+                        <p>P & L Values Measure</p>
+                    <code class="text-left">
+<pre>
+P & L Values = 
+    var res= SWITCH(
+        TRUE(),
+        MAX('P & L Row'[Order]) = 1, [GS $]/1000000,
+        MAX('P & L Row'[Order]) = 2, [Pre Invoice Deduction]/1000000,
+        MAX('P & L Row'[Order]) = 3, [NIS $]/1000000,
+        MAX('P & L Row'[Order]) = 4, [Post Invoice Discount]/1000000,
+        MAX('P & L Row'[Order]) = 5, [Post Invoice Other Deductions]/1000000,
+        MAX('P & L Row'[Order]) = 6, [Total Post Invoice Deduction]/1000000,
+        MAX('P & L Row'[Order]) = 7, [NS $]/1000000,
+        MAX('P & L Row'[Order]) = 8, [Manufacturing Cost $]/1000000,
+        MAX('P & L Row'[Order]) = 9, [Freight Cost $]/1000000,
+        MAX('P & L Row'[Order]) = 10, [Other Cost $]/1000000,
+        MAX('P & L Row'[Order]) = 11, [Total COGS $]/1000000,
+        MAX('P & L Row'[Order]) = 12, [GM $]/1000000,
+        MAX('P & L Row'[Order]) = 13, [GM %]*100,
+        MAX('P & L Row'[Order]) = 14, [GM/unit],
+        MAX('P & L Row'[Order]) = 15, [Operational Expense $]/1000000,
+        MAX('P & L Row'[Order]) = 16, [NP $]/1000000,
+        MAX('P & L Row'[Order]) = 17, [NP %]*100
+    )
+return
+IF(HASONEVALUE('P & L Row'[Description]), res, [NS $]/1000000)
+</pre>
+                    </code>
+                    <code class="text-left">
+<pre>
+P & L Final Value = 
+    SWITCH(
+        TRUE(),
+        SELECTEDVALUE(fiscal_year[fy_desc]) = MAX('P & L Columns'[Col Header]), 
+        [P & L Values],
+        MAX('P & L Columns'[Col Header]) = "BM", [P & L BM],
+        MAX('P & L Columns'[Col Header]) = "Chg", [P & L Chg],
+        MAX('P & L Columns'[Col Header]) = "Chg %", [P & L Chg %]
+    )
+</pre>
+                    </code>
+
+                    <p>P & L Column</p>
+                    <code class="text-left">
+<pre>
+P & L Columns = 
+var x = ALLNOBLANKROW(fiscal_year[fy_desc])
+return
+UNION(
+    ROW("Col Header", "BM"),
+    ROW("Col Header", "Chg"),
+    ROW("Col Header", "Chg %"),
+    x
+)
+</pre>
+                        </code>
+
+                        <div class="context-font">
+                            <h5>Key Learnings</h5>
+                            <ul>
+                                <li> Disconnected row + column tables for layout control</li>
+                                <li>Dynamic DAX logic for line-item selection and column switching</li>
+                                <li>Unit scaling and percentage formatting</li>
+                                <li>Financial logic separation (Actual, Benchmark, Variance)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="pnl-structure">
+                    <div class="accordion-header font-h4">
+                        <h4>2. Sales & Marketing View </h4>
+                        <span class="accordion-icon">+</span>
+                        </div>
+
+                        <div class="accordion-content nested-ul-styles">
+                            <p>No additional data transformation is required for the Sales view. We can directly build visuals using the existing model.</p>
+                            <h5>Essential Sales View Metrics </h5>
+                            <ol>
+                                <li><strong>Performance Metrics</strong>
+                                    <ul>
+                                        <li>Net Sales ($) (NS $) – Total revenue from sales</li>
+                                        <li>Gross Margin ($ / %) (GM $ / GM %) – Profitability indicator</li>
+                                        <li>Customer/Store-level performance – Breakdown by customer with NS $, GM $, GM %</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Customer Segmentation</strong>
+                                    <ul>
+                                    <li>Top Customers by Net Sales</li>
+                                    <li>Top Customers by GM %</li>
+                                    <li>Customer-wise Trend Comparison (vs LY or Target)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Product Segmentation</strong>
+                                    <ul>
+                                    <li>Product Category/Segment-wise NS $ and GM %</li>
+                                    <li>Best/Worst Performing Products</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Unit Economics</strong>
+                                    <ul>
+                                    <li>Pre-invoice deductions</li>
+                                    <li>Post-invoice deductions</li>
+                                    <li>COGS (Cost of Goods Sold)</li>
+                                    <li>Visual Breakdown using donut/pie charts</li>
+                                    </ul>
+                                </li>
+                            </ol>
+   
+                            <p>The Sales view will include the following components:</p>
+                            <ul>
+                                <li><strong>1. Scatter Chart:</strong> Integrated with a slicer for target gap tolerance to analyze performance distribution.</li>
+                                <li><strong>2. Tooltip Creation:</strong> Designed custom tooltips to provide deeper insights on hover.</li>
+                            </ul>
+                            <h5>1. Scatter Chart with target gap tolerance</h5>
+                            <ul>
+                                <li>Created a manual table using <i>GENERATESERIES</i> for user input through slicer:
+                                    <pre>
+                                Target Gap Tolerance 2 = GENERATESERIES(0, 0.2, 0.01)
+                                    </pre>
+                                </li>
+                                <li>Used this table as a slicer to let users select a GM% gap threshold.</li>
+                                <li>Created a variance calculation to measure deviation from the benchmark:
+                                    <pre>
+                                GM % Variance = [GM BM %] - [GM %]
+                                    </pre>
+                                </li>
+                                <li>Created a binary filter measure to include/exclude points from scatter chart:
+<code class="text-left">
+<pre>
+GM % Filter = 
+    IF(
+        [GM % Variance] >= 
+        SELECTEDVALUE('Target Gap Tolerance 2'[Target Gap Tolerance]), 
+        1, 
+        0
+    )
+</pre>
+</code>
+                                </li>
+                                <li>Used <i>GM % Filter</i> in the visual-level filters of the scatter chart.</li>
+                            </ul>
+
+                            <h5>2. Tooltip Creation</h5>
+                            <p>Created new report, changed page settings and added necessary chart</p>
+                            <p>for dynamic title:</p>
+                            <code>
+                                Sales View Tooltip = "NS and GM % for " & SELECTEDVALUE(dim_customer[customer]) & " " & SELECTEDVALUE(dim_product[segment])
+                            </code>
+
+                            <div class="context-font">
+                                <h6>Key Learnings</h6>
+                                <ul>
+                                    <li><strong>Target Gap Tolerance:</strong> A limit set by the user to show only those data points (like customers or products) that are close enough to the target or benchmark.
+                                    <br>
+                                        For example, if the target Net Sales is ₹10 million and the Target Gap Tolerance is set to 10%, only those customers whose Net Sales are within ±10% of ₹10 million (i.e., between ₹9M and ₹11M) will be shown. This helps focus only on relevant or closely performing entities.</li>
+                                    <li><strong>GENERATESERIES:</strong> A DAX function that creates a one-column table of values, useful for building dynamic slicers like tolerance limits.</li>
+                                    <li><strong>SELECTEDVALUE:</strong> Returns the selected value from a slicer. Used to apply user selection dynamically in DAX measures.</li>
+                                    <li><strong>Visual Filter with Measure:</strong> A common technique to hide/show points in visuals like scatter charts based on business logic.</li>
+                                    <li><strong>GM % Variance:</strong> The difference between benchmark GM% and actual GM%. Helps track whether performance is within tolerance.</li>
+                                </ul>
+                            </div>
+
+                            <h5>Essential Marketing View Metrics </h5>
+                            <ul>
+                                <li>Net Sales (NS $) per product</li>
+                                <li>Gross Margin (GM % and GM $)</li>
+                                <li>Net Profit (NP % and NP $)</li>
+                                <li>Monthly trend of NS $ and GM %</li>
+                                <li>Top-performing products</li>
+                                <li>Cost vs Margin (COGS donut chart)</li>
+                                <li>P&L breakdown (GM, OpEx, NP)</li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" id="pnl-structure">
+                    <div class="accordion-header font-h4">
+                        <h4>3. Supply Chain View </h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+
+                    <div class="accordion-content nested-ul-styles">
+                        <h5>Essential Marketing View Metrics </h5>
+                        <ul>
+                            <li>Net Error: Actual - Forecast</li>
+                            <li>❌ Over-forecasting: less actual, more forecast EI(excess Inventory)</li>
+                            <li>✅ Under-forecasting: more actual, less forecast, OOS(out of stock)</li>
+                            <li>Abs Error: |Actual - Forecast|</li>
+                            <li>Forecast Accuracy FA % = (1 - (|Actual - Forecast| / Actual)) × 100</li>
+                            <li>Risk</li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="accordion-item" id="live-dashboard">
+                    <div class="accordion-header font-h4">
+                        <h4 class="color-purple">Live Dashboard</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <iframe title="BI_updated_march" width="1200" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiZmViMWRhYzMtYjlmMy00OTUzLThmZWUtZTAyZGMzOTQ4ZDcyIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" frameborder="0" allowFullScreen="true"></iframe>    
+                    </div>
+                </div>
+                <div class="accordion-item" id="">
+                    <div class="accordion-header font-h4">
+                        <h4>DAX functions</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <code>P & L LY = CALCULATE([P & L Values], SAMEPERIODLASTYEAR(dim_date[date]))</code>
+                    </div>
+                </div>
+                <!-- ---------------------------------------------------------- SLICER FUNCTIONS ----------------------------------------------------------  -->
+                <div class="accordion-item" id="">
+                    <div class="accordion-header font-h4">
+                        <h4>Slicers</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+
+                        <p>Created slicers to allow users to interactively filter and explore the data based on selected criteria.</p>
+                        <img src="../images/slicers.png" style="max-height:400px;"/>
+                         <!-- -----------------------  Year Slicer ----------------------- -->
+                        <h5>Year Slicer</h5>
+                        <p>Created another table by manually entering data, fiscal_year, fy_desc </p>
+                        <p>Use fiscal_year for calculations and relationships (from date table)</p>
+                        <p>Use fy_desc for display in visuals</p>
+
+
+                        <!-- -----------------------  Benchmark Slicer ----------------------- -->
+                        <h5>Benchmark Slicer</h5>
+                        <p>Created a manual table for benchmark options like LY and Target:</p>
+                        <img src="../images/benchmark.png" style="max-height:200px;" />
+
+                        <p>This is a custom slicer. To make visuals respond dynamically, you need to create separate measures for each benchmark and then combine them using logic based on slicer selection.</p>
+
+                        <h6>Step 1: Create supporting measures</h6>
+
+<code  class="text-left"><pre>
+NS LY $ = 
+CALCULATE(
+    [NS $],
+    SAMEPERIODLASTYEAR(dim_date[date])
+)
+</pre></code>
+
+<code  class="text-left"><pre>
+NS Target $ = 
+VAR tgt = SUM(NsGmTarget[ns_target])
+RETURN IF([product / customer filter check], BLANK(), tgt)
+</pre></code>
+
+<code  class="text-left"><pre>
+product / customer filter check = 
+IF(
+    ISCROSSFILTERED(dim_product[product]) || 
+    ISCROSSFILTERED(dim_customer[customer]), 
+    TRUE(), 
+    FALSE()
+)
+</pre></code>
+
+                        <h6>Step 2: Create the unified benchmark measure</h6>
+
+<code  class="text-left"><pre>
+NS BM = 
+VAR tgt = 
+    SWITCH(
+        TRUE(),
+        SELECTEDVALUE(benchmark[ID]) = 1, [NS LY $],
+        SELECTEDVALUE(benchmark[ID]) = 2, [NS Target $]
+    )
+RETURN IF([product / customer filter check] = TRUE(), BLANK(), tgt)
+</pre></code>
+
+                        <p>The NS BM measure dynamically switches between benchmarks based on slicer selection. It ensures results are shown only at 
+                            the appropriate level (e.g., total market), not when a specific product or customer is filtered.</p>
+
+                        <h6>BM message for blank KPI Cards</h6>
+                        <code>BM Message = IF([NS BM] = BLANK() || [GM BM %] = BLANK() || [NP BM %] = BLANK(), "*BM Target(s) is not available for the selected filters", "") </code>
+
+                        <!-- -----------------------  YTD/ YTG Slicer ----------------------- -->
+                        <h5>YTD/ YTG Slicer</h5>
+                        <p>Created a calculated column in the <i>dim_date</i> table called <strong>ytd_ytg</strong>. 
+                            Since this column is directly related to the date dimension, we can use it in visuals and slicers without creating additional measures.
+                      </p>
+<code class="text-left">
+<pre>
+ytd_ytg = 
+    var LastSalesDate = MAX(last_sale_date[last_sale_date])
+    var FYMonthNum = MONTH(DATE(YEAR(LastSalesDate), MONTH(LastSalesDate)+4, 1))
+    return
+    IF(dim_date[fy_month_num]> FYMonthNum, "YTG", "YTD")
+</pre>
+</code>
+                        <!-- ----------------------- Quarter Slicer ----------------------- -->
+                         <h5>Quarter Slicer</h5>
+                         <p>Same as YTD/ YTG Slicer</p>
+<code  class="text-left">
+<pre>
+quarter = "Q" & ROUNDUP( DIVIDE(dim_date[fy_month_num], 3, 0), 0)
+</pre>
+</code>
+
+                        <!-- ----------------------- Reset Filters button ----------------------- -->
+                         <h5>Reset Filter Button</h5>
+                        <p>Created a bookmark named <strong>Remove Filters</strong> with all filters cleared.</p>
+                        <p>Added a button and set its <strong>Action</strong> property to trigger this bookmark, allowing users to reset all filters with a single click.</p>
+
+
+                        <div class="context-font">
+                            <h5>Key Learnings</h5>
+                            <ul>
+                                <li><strong>Manual Slicers:</strong> Created custom slicer tables for <i>Fiscal Year</i> and <i>Benchmark</i>, giving flexibility in display and control over calculations.</li>
+                                <li><strong>Fiscal Year Slicer:</strong> Used <i>fiscal_year</i> from the Date table for relationships and calculations, and <i>fy_desc</i> for cleaner visual labels.</li>
+                                <li><strong>Benchmark Slicer:</strong> Custom table used to toggle between metrics like Last Year and Target. Required separate measures for each benchmark scenario.</li>
+                                <li><strong>YTD/YTG Logic:</strong> Added a calculated column <i>ytd_ytg</i> in the Date table to classify months as Year-To-Date or Year-To-Go based on the latest sales date.</li>
+                                <li><strong>Reset Filters:</strong> Created a bookmark named <i>Remove Filters</i> with all filters cleared. Linked this to a button to help users reset the report view easily.</li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="accordion-item" id="other-dax">
+                    <div class="accordion-header font-h4">
+                        <h4>Technical Verbs</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <h5>Slicers and Filters</h5>
+                        <table border="1" cellspacing="0" cellpadding="8">
+                            <thead style="background-color:#f0f0f0;">
+                                <tr>
+                                <th>Feature</th>
+                                <th>Slicers</th>
+                                <th>Filters</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td><strong>What it is</strong></td>
+                                <td>A visual element users interact with</td>
+                                <td>A background-level configuration set in the Filter Pane</td>
+                                </tr>
+                                <tr>
+                                <td><strong>User Visibility</strong></td>
+                                <td>Visible on the report canvas</td>
+                                <td>Visible only in the filter pane</td>
+                                </tr>
+                                <tr>
+                                <td><strong>Interactivity</strong></td>
+                                <td>User can select/deselect values</td>
+                                <td>Usually fixed by report designer</td>
+                                </tr>
+                                <tr>
+                                <td><strong>Scope</strong></td>
+                                <td>Page-level (affects visuals on that page)</td>
+                                <td>Visual-level, Page-level, or Report-level</td>
+                                </tr>
+                                <tr>
+                                <td><strong>Common Types</strong></td>
+                                <td>Dropdown, Checkbox, Range, Relative Date</td>
+                                <td>Visual Filter, Page Filter, Report Filter, Top N, Drillthrough</td>
+                                </tr>
+                                <tr>
+                                <td><strong>Use Case</strong></td>
+                                <td>Let users explore data (e.g., select year, category)</td>
+                                <td>Restrict or predefine the data shown in visuals</td>
+                                </tr>
+                                <tr>
+                                <td><strong>Best For</strong></td>
+                                <td>User control and interaction</td>
+                                <td>Applying rules and hiding filter logic</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- -----------------------------  ACCORDION  -----------------------------  -->
+
+
         </div>
     </section>
     <footer class="footer">

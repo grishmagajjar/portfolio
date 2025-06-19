@@ -42,3 +42,45 @@ jQuery("#close").click(function(){
         iframe.attr("src", ""); // Remove src to stop video
         iframe.attr("src", videoSrc); // Restore src when reopened
 });   
+
+
+// project page accordion js 
+$(document).ready(function() {
+  var headerOffset = 100; // adjust based on your header height
+
+  // Accordion toggle logic
+  $('.accordion-header').on('click', function() {
+    var $header = $(this);
+    var $item = $header.parent();
+
+    // Close all others
+    $('.accordion-content').not($header.next()).slideUp();
+    $('.accordion-header').not($header).removeClass('active').find('.accordion-icon').text('+');
+
+    // Toggle current
+    $header.toggleClass('active');
+    $header.next('.accordion-content').slideToggle();
+
+    // Update icon
+    var icon = $header.hasClass('active') ? '-' : '+';
+    $header.find('.accordion-icon').text(icon);
+  });
+
+  // Handle URL hash for auto-opening an accordion item
+  var hash = window.location.hash;
+  if (hash) {
+    var $targetItem = $(hash);
+    if ($targetItem.length && $targetItem.hasClass('accordion-item')) {
+      $targetItem.find('.accordion-header').trigger('click');
+
+      // Delay scrolling until after the accordion expands
+      setTimeout(function() {
+        $('html, body').animate({
+          scrollTop: $targetItem.offset().top - headerOffset
+        }, 500);
+      }, 300); // delay should match your .slideToggle() duration
+    }
+  }
+});
+
+// project page accordion js 
