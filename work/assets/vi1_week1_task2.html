@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+<body>
+<h3>1. Create Schema</h3>
+    <pre><code>
+CREATE SCHEMA IF NOT EXISTS vi_task2;
+USE vi_task2;
+    </code></pre>
+
+    <h3>2. Explore Initial Data</h3>
+    <p>Check the initial tables:</p>
+    <pre><code>
+SELECT * FROM vi_task2.fact_order_lines;
+    </code></pre>
+
+    <h3>3. Clean up order_placement_date</h3>
+    <p>Steps to convert order_placement_date to proper DATE type:</p>
+    <pre><code>
+SET SQL_SAFE_UPDATES = 0;
+
+ALTER TABLE fact_order_lines 
+CHANGE COLUMN order_placement_date order_placement_date DATETIME NULL DEFAULT NULL;
+
+UPDATE fact_order_lines
+SET order_placement_date = STR_TO_DATE(order_placement_date, '%d/%m/%Y');
+
+ALTER TABLE fact_order_lines 
+CHANGE COLUMN order_placement_date order_placement_date DATE NULL DEFAULT NULL;
+    </code></pre>
+
+    <h3>4. Create Date Dimension (dim_date)</h3>
+    <pre><code>
+CREATE TABLE dim_date (
+    date DATE PRIMARY KEY,
+    mmm_yy VARCHAR(7),
+    week_no VARCHAR(4)
+);
+
+INSERT INTO dim_date (date, mmm_yy, week_no)
+WITH RECURSIVE date_range AS (
+    SELECT MIN(order_placement_date) AS start_date,
+           MAX(order_placement_date) AS end_date
+    FROM fact_order_lines
+),
+dates AS (
+    SELECT start_date AS dt FROM date_range
+    UNION ALL
+    SELECT DATE_ADD(dt, INTERVAL 1 DAY)
+    FROM dates, date_range
+    WHERE dt < end_date
+)
+SELECT dt AS date,
+       CONCAT(DATE_FORMAT(dt, "%b"), '_', DATE_FORMAT(dt, "%y")) AS mmm_yy,
+       CONCAT('W ', LPAD(FLOOR((DAYOFYEAR(dt) + (DAYOFWEEK(MAKEDATE(YEAR(dt),1))-1))/7) + 1, 2, '0')) AS week_no
+FROM dates;
+    </code></pre>
+
+    <h3>5. Create Product Dimension (dim_products)</h3>
+    <pre><code>
+CREATE TABLE dim_products (
+    product_id INT PRIMARY KEY,
+    product_name TEXT,
+    category TEXT
+);
+
+INSERT INTO dim_products (product_id, product_name, category)
+SELECT DISTINCT product_id, product_name, category
+FROM fact_order_lines;
+    </code></pre>
+
+        <h3>6. Create Customer Dimension (dim_customers)</h3>
+    <pre><code>
+CREATE TABLE dim_customers (
+    customer_id INT PRIMARY KEY,
+    customer_name TEXT,
+    city TEXT
+);
+
+INSERT INTO dim_customers (customer_id, customer_name, city)
+SELECT DISTINCT customer_id, customer_name, city
+FROM fact_order_lines;
+    </code></pre>
+
+        <h3>7. Create Fact Table (fact_orders)</h3>
+    <pre><code>
+CREATE TABLE fact_orders (
+    order_id TEXT,
+    product_id INT,
+    customer_id INT,
+    order_placement_date DATE,
+    order_qty INT,
+    delivery_qty INT
+);
+
+INSERT INTO fact_orders (order_id, product_id, customer_id, order_placement_date, order_qty, delivery_qty)
+SELECT 
+    order_id,
+    product_id,
+    customer_id,
+    order_placement_date,
+    order_qty,
+    delivery_qty
+FROM fact_order_lines;
+    </code></pre>
+
+    <h3>8. Row Counts for Validation</h3>
+    <p>Check that all rows from the original fact_order_lines table are captured in the fact_orders table after normalization.</p>
+    <pre><code>
+SELECT COUNT(*) AS fact_order_lines_count FROM fact_order_lines;
+SELECT COUNT(*) AS fact_orders_count FROM fact_orders;
+
+    </code></pre>
+</body>
+</html>

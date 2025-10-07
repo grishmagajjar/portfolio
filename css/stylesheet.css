@@ -35,7 +35,7 @@ ul{
 code {
     padding: 30px 20px; display: block; font-size: 18px; margin: 5px 0 40px 0;border: 1px solid #ccc; text-align: center; line-height: 28px;
 }
-code.text-left{
+code.text-left, .project-section .text-left {
     text-align: left;
 }
 .red-text{
@@ -449,6 +449,83 @@ max-height: 40px;
     margin-bottom: 25px;
 }
 /* project page accordion css  */ 
+
+
+/* work page styles  */
+.work-styles h1{
+    margin-bottom: 50px; padding-bottom: 20px;
+}
+.work-styles .line-styles-work li{
+    font-size: 23px;
+    line-height: 33px;
+    margin-bottom: 20px
+}
+.work-styles .line-styles-work li:last-child{
+    margin-bottom: 0
+}
+.work-styles .line-styles-work{
+    margin-bottom: 50px;
+    padding-left: 0;
+}
+.work-styles h2{
+    font-size: 34px;
+    line-height: 44px;
+    padding-bottom: 0;
+}
+.work-styles p {
+    font-size: 20px;
+    line-height: 32px;
+    text-align: left;
+}
+.work-styles h3{
+    font-size: 28px;
+    line-height: 38px;
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 10px
+}
+body .work-styles .line-styles-work-inner li{
+    font-size: 20px !important;
+    line-height: 32px;
+    margin-bottom: 15px;
+    padding-left: 0;
+}
+body .work-styles .line-styles-work-inner li li{
+    padding-left: 20px;
+}
+.work-styles code {
+padding: 0 05px !important;
+display: inline-block !important;
+margin: 0 !important;
+background-color: #eee;
+border-radius: 5px;
+text-align: left;
+}
+.work-styles code.width100{
+    width: 100%;
+}
+.iframe-with-title iframe {
+    margin-top: 10px; margin-bottom: 30px;
+}
+.space-60{
+    padding-bottom: 60px;
+}
+.space-40{
+    padding-bottom: 40px;
+}
+.space-20{
+    padding-bottom: 20px;
+}
+.end-line{
+    text-align: center; padding: 20px 0; font-size: 30px;
+}
+.iframe-heading-border h3{
+    border-bottom: 1px solid #000;
+}
+img{
+    padding-top: 10px; padding-bottom: 15px;
+}
+
 
 
 @media screen and (max-width:1199px){
