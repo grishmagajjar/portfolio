@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Grishma Gajjar - Aspiring Data Analyst</title>
+
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/stylesheet.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header" id="site-header">
+        <div class="container">
+            <div class="title font-h1">
+                <h1><a href="../index.html"> Grishma Gajjar.</a></h1>
+            </div>
+            <div class="navigation">
+                <ul class="gg_index-links" id="mega-menu-primary">
+                    <li><a href="../index.html#gg4_edu">Education</a></li>
+                    <li><a href="../index.html#gg12_skills">Skills</a></li>
+                    <li><a href="../index.html#gg4_exp">Experience</a></li>
+                    <li><a href="../index.html#gg4_proj">Projects</a></li>
+                    <li><a href="../index.html#gg4_awars">Certificates</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="project-section font-h2 font-h1 work-styles">
+        <div class="container">
+            <!-- ---------------------------- week 1  ---------------------------- -->
+            <h1 class="center-line">Virtual Internship – Week 1</h1>
+            <ul class="line-styles-work">
+                <li>Total Tasks Completed: <span class="color-purple"> 3</span></li>
+                <li>Time Spent: <span class="color-purple">30 hours</span></li>
+                <li>Tools Used: <span class="color-purple">Microsoft Excel, MySQL Workbench, Jupyter Notebook</span></li>
+            </ul>
+            <h2 class="text-left">Overview of Tasks</h2>
+            <ul class="line-styles-work">
+                <li>- Data Cleaning and Ad-hoc Analysis</li>
+                <li>- Conversion of Dataset from Denormalized to Normalized Structure</li>
+                <li>- Basics of Scrum</li>
+            </ul>
+            <h2 class="text-left">Task 1: Data Cleaning & Ad-hoc Analysis</h2>
+            <p>The HR department wanted to analyze the Work From Home (WFH%) trends for employees. As a 
+                Data Analyst, my responsibility was to clean the dataset and provide actionable insights on WFH patterns.</p>
+            <h3>Python (Pandas) Cleaning</h3>
+             <p>Completed cleaning and transformations in a few lines of Python for efficiency.</p>
+            <ul class="line-styles-work-inner">
+                <li>- Imported CSV into Jupyter Notebook.</li>
+                <li>- Used commands such as:
+                    <ul class="line-styles-nested">
+                        <li>- <code>to_datetime()</code> for date parsing</li>
+                        <li>- <code>.dt.strftime('%B')</code> to extract month names</li>
+                        <li>- <code>.dt.dayofweek</code> to map weekdays</li>
+                        <li>- <code>.str.rstrip()</code> for removing trailing spaces</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="iframe-with-title">
+                <h3>Here is jupyter notebook preview:</h3>
+                <iframe id="internshipFrame" src="assets/tasks.html" width="100%" height="700" style="border:none;"></iframe>
+
+                <button onclick="goFullScreen()">🔍 Full Screen</button>
+
+                <script>
+                function goFullScreen() {
+                    let iframe = document.getElementById("internshipFrame");
+                    if (iframe.requestFullscreen) {
+                        iframe.requestFullscreen();
+                    } else if (iframe.mozRequestFullScreen) { // Firefox
+                        iframe.mozRequestFullScreen();
+                    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari
+                        iframe.webkitRequestFullscreen();
+                    } else if (iframe.msRequestFullscreen) { // IE/Edge
+                        iframe.msRequestFullscreen();
+                    }
+                }
+                </script>
+            </div>
+            <h3>Excel Cleaning Process</h3>
+            <ul class="line-styles-work-inner">
+                <li>- Dropped duplicates</li>
+                <li>- Standardized date formats</li>
+                <li>- Removed unwanted special characters from IDs</li>
+                <li>- Capitalized employee names and formatted them properly</li>
+                <li>- Created a dynamic alias formula for employee status:
+                    <br>
+                    <code>=UPPER(LEFT(G2, 1) & IFERROR(MID(G2, FIND(" ", G2)+1, 1), " ") & IFERROR(MID(G2, FIND(" ", G2, FIND(" ", G2)+1)+1, 1), " "))</code>
+                </li>
+                <li>- Dropped duplicates again after transformations</li>
+                <li>- Added helper columns and built pivot tables for analysis</li>
+            </ul>
+            <div class="iframe-with-title">
+                <h3>Here is excel worksheet preview: (scroll right in sheet for analysis)</h3>
+                <iframe id="internshipFrame1" src="https://docs.google.com/spreadsheets/d/13opFSAd5EPADaP4J8BSbgiLBwTtj9i7nUsEwstp9Uq8/edit?usp=sharing" width="100%" height="700" style="border:none;"></iframe>
+            </div>
+            <div class="end-line">----- x -----</div>
+            <div class="space-40"></div>
+            <h2 class="text-left">Task 2: Data Normalisation</h2>
+            <h2 class="text-left">Overview</h2>
+            <ul class="line-styles-work">
+                <li>- One of client's dataset is currently in a <span class="color-purple">de-normalized</span> form, and they need our help to transform it into a <span class="color-purple">normalized form.</span>
+                    <img src="../images/denormalised-table.png" width="50%" style="display: block;" />
+                    <img src="../images/normalised-table.png" width="50%" />
+                </li>
+                <li>- My task was to create proper fact and dimension tables based on the dataset
+                    <img src="../images/vi-week1-task2-model.png"/>
+                </li>
+                <li>- I have imported fact_order_lines.csv to my local SQL workbench, and used below queries to create sepearate tables</li>
+            </ul>
+
+            <iframe id="internshipFrame" src="assets/vi1_week1_task2.html" width="100%" height="700" style="border:none;"></iframe>
+<div class="space-60"></div>
+            <!-- ---------------------------- week 1  ---------------------------- -->
+
+            <!-- ---------------------------- week 2  ---------------------------- -->
+            <h1 class="center-line">Virtual Internship – Week 2</h1>
+            <ul class="line-styles-work">
+                <li>Total Tasks Completed: <span class="color-purple"> 3</span></li>
+                <li>Time Spent: <span class="color-purple"> 56 hours</span></li>
+                <li>Tools Used: <span class="color-purple">Power BI, SQL, Microsoft Excel</span></li>
+            </ul>
+            <h2 class="text-left">Overview of Tasks</h2>
+            <ul class="line-styles-work">
+                <li>- Variance Analysis</li>
+                <li>- SQL Query Debugging</li>
+                <li>- Report Automation</li>
+            </ul>
+            <h2 class="text-left">Task 1: Variance Analysis</h2>
+            <!-- ---------------------------- week 2  ---------------------------- -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Made by me only. Yes, My favourite color is purple.😌</p>
+    </footer>
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/custom.js"></script>
+</body>
+</html>
